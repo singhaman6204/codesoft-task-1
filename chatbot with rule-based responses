@@ -1,0 +1,25 @@
+# Simple rule-based chatbot
+
+def get_response(user_input):
+    user_input = user_input.lower()
+    response = ""
+
+    if "hello" in user_input:
+        response = "Hi there! How can I help you?"
+    elif "how are you" in user_input:
+        response = "I'm just a chatbot, but I'm here to assist you!"
+    elif "bye" in user_input:
+        response = "Goodbye! Have a great day!"
+    else:
+        response = "I'm sorry, I don't understand that."
+
+    return response
+
+# Main loop
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    response = get_response(user_input)
+    print("Chatbot:", response)
